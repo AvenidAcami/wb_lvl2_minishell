@@ -21,8 +21,7 @@ var rootCmd = &cobra.Command{
 
 func Execute() {
 	cobra.OnInitialize(initConfig)
-	rootCmd.AddCommand(pwdCmd)
-
+	rootCmd.AddCommand(pwdCmd, cdCmd, echoCmd, killCmd, psCmd)
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println("error:", err)
 		os.Exit(1)
